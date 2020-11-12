@@ -1,0 +1,16 @@
+{
+  "name": "tester",
+  "version": "1.0.4",
+  "description": "The outline for my bots",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "SharkFin",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.3.2",
+    "discord.js": "^12.4.1",
+    "sqlite3": "^4.0.2"
+  }
+}

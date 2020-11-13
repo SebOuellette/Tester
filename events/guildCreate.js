@@ -1,8 +1,10 @@
 exports.run = (client, guild) => {
     client.postStats();
     console.log(`Guild joined! Now in ${client.bot.guilds.cache.size} guilds.`.green);
+    console.log(guild);
     guild.members.fetch();
 
+    // Send the join embed
     client.bot.channels.cache.get(client.logchan).send({
         embed: {
             color: 0x44FF44,

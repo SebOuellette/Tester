@@ -2,6 +2,8 @@ exports.run = (client, guild) => {
     client.postStats();
     console.log(`Guild lost! Now in ${client.bot.guilds.cache.size} guilds.`.green);
     guild.members.fetch();
+
+    // Send the leave embed
     client.bot.channels.cache.get(client.logchan).send({
         embed: {
             color: 0xFF4444,

@@ -1,8 +1,10 @@
-exports.run = (client, guild) => {
+exports.run = async (client, guild) => {
     client.postStats();
     console.log(`Guild joined! Now in ${client.bot.guilds.cache.size} guilds.`.green);
-    console.log(guild);
-    guild.members.fetch();
+    
+    // Fetch garbage
+    let owner = await client.bot.users.fetch(guild.ownerID);
+    await guild.members.fetch();
 
     // Send the join embed
     client.bot.channels.cache.get(client.logchan).send({
@@ -20,7 +22,7 @@ exports.run = (client, guild) => {
                 },
                 {
                     name: 'Owner',
-                    value: guild.owner.user.tag,
+                    value: `${owner.username}#${owner.discriminator}`,
                     inline: true
                 },
                 {
